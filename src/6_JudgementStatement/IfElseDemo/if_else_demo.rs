@@ -1,4 +1,5 @@
 fn main() {
+    // if、if-else、if-else-if else
     let price:f32 = 222.00;
     if price > 200.00 {
         println!("打八折，共{}元", price*0.8);
