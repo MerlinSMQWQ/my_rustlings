@@ -17,4 +17,8 @@ fn main () {
 
     println!("std::u128::MAX = {}", std::u128::MAX);
     println!("std::i128::MIN = {}", std::i128::MIN);
+
+    // 当数字很长的时候rust允许使用下划线分隔
+    let num6 = 123_456_789;
+    println!("num6 = {}", num6);
 }
