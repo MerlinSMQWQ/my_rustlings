@@ -14,17 +14,16 @@ enum USState {
 
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => {
-            // 如果这里是多行的代码块，那就需要使用花括号括起来，有点像匿名函数
+        Coin::Penny => {    // 如果这里是多行的代码块，那就需要使用花括号括起来，有点像匿名函数
             println!("this is a penny!");
             1
-        }
+        },
         Coin::Nickel => 5,
         Coin::Dime => 10,
         Coin::Quarter(state) => {
             println!("{:?}!", state);
             25
-        }
+        },
     }
 }
 
@@ -32,7 +31,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 fn push_one(x: Option<i32>) -> Option<i32> {
     match x {
         None => None,
-        Some(i) => Some(i + 1),
+        Some(i) => Some(i+1),
     }
 }
 
@@ -48,6 +47,7 @@ fn main() {
     let quarter = Coin::Quarter(USState::Alaska);
     println!("{}", value_in_cents(quarter));
 
+
     let five = push_one(Some(5));
     let none = push_one(None);
     println!("{:?}", five);
@@ -61,8 +61,7 @@ fn main() {
     }
 
     // 为了更简单地进行匹配，rust还有if let语句，如果只要匹配一种情况，if let可以用更少的代码，达到同样的目的(可以讲if let看做match的一个语法糖，match更通用)
-    if let 1 = x {
-        // 这里和正常的逻辑有点不一样，是反着的
+    if let 1 = x {  // 这里和正常的逻辑有点不一样，是反着的
         println!("1");
     } else {
         println!("{x}");
