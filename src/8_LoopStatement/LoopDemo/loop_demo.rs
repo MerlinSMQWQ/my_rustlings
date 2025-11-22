@@ -1,5 +1,5 @@
 fn main() {
-    // loop和break组合，实现循环
+    // loop和break组合，实现条件循环，如果没有break就是一个死循环
     let mut num = 1;
     loop {
         if num > 20 {
