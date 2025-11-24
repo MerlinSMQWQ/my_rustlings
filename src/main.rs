@@ -1,14 +1,23 @@
 fn main() {
     /*
-        iter() 返回一个只读迭代器，原集合依然可以使用，迭代器元素类型为&T
-        into_iter() 返回一个只读迭代器，但是原集合不可再次使用了，迭代器元素为T
-        iter_mut() 返回一个可修改的迭代器，并且原集合依旧可以使用，迭代器元素的类型为&mut T
-     */
-    let v = vec!["Alice", "Bob", "Eva"];
-    let mut it = v.iter();
-    // next()返回迭代器的下一个元素
-    println!("{:?}", it.next());
-    println!("{:?}", it.next());
-    println!("{:?}", it.next());
-    println!("{:?}", it.next());    // 遍历结束则是None
+        | 输入参数（可能多个） | { 表达式 };
+
+        闭包是在一个函数内部创建并理解调用的函数，没有函数签名，是一个匿名函数
+        闭包不用声明返回值，但是可以有返回值
+        闭包有能力捕获外部环境的变量
+        闭包可以再没有类型标注的情况下运行，可以move，也可以borrow，意味着他可以捕获&T、&mut T、T
+    */
+
+    let double = |x|{x*2};
+    let add = |a, b|{a + b};
+    let x = add(2, 4);
+    println!("{}", x);
+
+    let y = double(5);
+    println!("{}", y);
+
+    // add2捕获了外部环境中的v这个变量
+    let v = 3;
+    let add2 = |x|{v + x};
+    println!("{}", add2(4));
 }
